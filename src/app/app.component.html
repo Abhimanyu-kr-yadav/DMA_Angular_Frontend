@@ -34,8 +34,8 @@
 
   <ul style="list-style-type: none;">
     <li *ngFor="let section of Sections">
-      <i class="bi bi-plus-lg" style="font-size:20px; color: red;"></i><a class="m-4">{{section.section_name | titlecase}}</a>
+      <i class="bi bi-plus-lg" style="font-size:20px; color: red;"></i><a routerLink="/getQuestionsBySectionId/{{section.section_id}}" class="m-4">{{section.section_name | titlecase}}</a>
     </li>
+    <router-outlet></router-outlet>
   </ul>
-
 </div>

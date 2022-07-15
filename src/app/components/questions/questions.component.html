@@ -1,0 +1,9 @@
+<ol>
+    <li *ngFor="let question of Questions">
+        <a routerLink="#">{{question.question_name | titlecase}}</a>
+    </li>
+</ol>
+<div>
+    <router-outlet></router-outlet>
+</div>
+<br>
