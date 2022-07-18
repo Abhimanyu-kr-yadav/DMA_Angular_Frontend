@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 
 const routes: Routes = [
-  { path: 'getQuestionsBySectionId/:id', component: QuestionsComponent }
+  { path: 'getQuestions/:id', component: QuestionsComponent }
 ];
 
 @NgModule({
