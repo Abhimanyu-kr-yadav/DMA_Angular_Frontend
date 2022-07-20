@@ -4,3 +4,14 @@
     padding: 1px;
     display: inline-flex;
     }
+
+    .example-radio-group {
+        display: flex;
+        flex-direction: row;
+        margin: 15px 0;
+        align-items: flex-start;
+      }
+      
+      .example-radio-button {
+        margin: 5px;
+      }

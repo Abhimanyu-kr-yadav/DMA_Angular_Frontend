@@ -1,44 +1,121 @@
 .accordion {
-    display: block;
-    max-width: 800px;
-  }
-  
-  .accordion-item {
-    display: block;
-    border: solid 1px #ccc;
-  }
-  
-  .accordion-item + .accordion-item {
-    border-top: none;
-  }
-  
-  .accordion-item-header {
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-  }
-  
-  .accordion-item-description {
-    font-size: 0.85em;
-    color: #999;
-  }
-  
-  .accordion-item-header,
-  .accordion-item-body {
-    padding: 16px;
-  }
-  
-  .accordion-item-header:hover {
-    cursor: pointer;
-    background-color: #eee;
-  }
-  
-  .accordion-item:first-child {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-  }
-  
-  .accordion-item:last-child {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
+  display: block;
+  max-width: 850px;
+}
+
+.accordion-item {
+  display: block;
+  border: none;
+}
+
+.accordion-item+.accordion-item {
+  border-top: none;
+}
+
+.accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+
+
+}
+.accordion-item-header span a {
+  font-size: 1.2rem;
+  color: #112b3c;
+  font-weight: 400;
+}
+.accordion-item-header span i{
+  color: #ff0505;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.accordion-item-description {
+  font-size: 0.85em;
+}
+
+.accordion-item-header,
+.accordion-item-body {
+  padding: 10px;
+}
+
+.accordion-item-header:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.accordion-item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.accordion-item:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+
+
+
+
+.hero {
+  /* opacity: 0.1; */
+  background-image: url("../assets/artem-kniaz.jpg");
+  background-size: cover;
+
+  width: 100%;
+  height: 250px;
+}
+
+.leftHeroHeader {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: #fff;
+  left: 5%;
+  top: 20%;
+}
+
+.heroH1 {
+  font-size: 4.5rem;
+  color: #efefef;
+}
+
+.heroPara {
+  width: 57%;
+  margin-top: 1.5rem;
+}
+
+.rightHeroHeader {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 90px;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  color: #fff;
+  background-color: #e60000;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.rightHeroCustomer {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  margin-left: 1.5rem;
+}
+
+.rightHeroCustomer img {
+  position: relative;
+  top: .8rem;
+}
+
+.rightHeroCustomer p {
+  margin-left: 2rem;
+  position: relative;
+  top: 1.5rem;
+  font-size:1.3rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
