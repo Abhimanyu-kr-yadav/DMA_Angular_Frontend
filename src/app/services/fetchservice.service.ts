@@ -13,7 +13,11 @@ export class FetchserviceService {
     return this.http.get<any[]>('http://localhost:8080/dma/getSections');
   }
 
-  GetQuestionsBySectionId(id:string|null):Observable<any>{
-    return this.http.get<any>(`http://localhost:8080/dma/getQuestionsBySectionId/${id}`);
+  GetQuestionsBySectionId(id:string|null):Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:8080/dma/getQuestionsBySectionId/${id}`);
+  }
+
+  GetAnswers():Observable<any[]>{
+    return this.http.get<any[]>('http://localhost:8080/dma/getAnswers');
   }
 }
