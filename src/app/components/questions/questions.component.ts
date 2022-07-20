@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { ActivatedRoute } from '@angular/router';
 import { FetchserviceService } from '../../services/fetchservice.service';
 
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.css']
+  styleUrls: ['./questions.component.css'],
+  providers: [{
+    provide : MAT_RADIO_DEFAULT_OPTIONS,
+    useValue: { color: 'accent'}
+  }]
 })
 export class QuestionsComponent implements OnInit {
 
@@ -16,6 +21,8 @@ export class QuestionsComponent implements OnInit {
   radioSel:any;
   radioSelected:string;
   radioSelectedString:string = "";
+  answerName:any;
+  seasons: string[] = ['A', 'B', 'C', 'D'];
 
   constructor(private route: ActivatedRoute, private data: FetchserviceService) {
     this.radioSelected = "AGREE";

@@ -3,11 +3,16 @@
         <li *ngFor="let question of Questions">
             <span>{{question.question_name | titlecase}}</span>
             <ul id="list-style">
-                <li class="p-4" *ngFor="let answer of Answers; let i = index;">
-                   
-                    <input type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{answer.answer_name}}" (change)="onItemChange(answer)" > <span style="margin-left: 5px;">{{answer.answer_name}}</span> 
-                </li>
+                <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    >
+                    <mat-radio-button class="example-radio-button" *ngFor="let answer of Answers" [value]="answer.answer_name">
+                        {{answer.answer_name}}
+                    </mat-radio-button>
+                </mat-radio-group>
             </ul>
+        
         </li>
     </ol>
 
@@ -19,18 +24,15 @@
 <br>
 
 
-<!-- <div *ngFor='let item of array;let i = index'>                    
-    <input type="radio" [checked]=false (click)='radioChecked(item.id,i)' > <input type="text" value='{{item.name}}' >  <button type="button" >save</button>                    
-  </div>  
- 
- ngOnInit() {  
-   this.myService.getNumber(id).subscribe((data) =>{  
-   //when the page loads, set one of radiobuttons to true
-   //somehow get the id and set to true, no standard is, since dynamic list
-   radioId.value = true;
-   })
- }
- 
- radioChecked(id, i){
-   //turn all the others to false, except this one
- } -->
+
+
+
+
+
+
+
+
+
+
+
+
