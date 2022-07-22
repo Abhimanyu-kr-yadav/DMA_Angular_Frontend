@@ -22,7 +22,6 @@ export class QuestionsComponent implements OnInit {
   radioSelected:string;
   radioSelectedString:string = "";
   answerName:any;
-  seasons: string[] = ['A', 'B', 'C', 'D'];
 
   constructor(private route: ActivatedRoute, private data: FetchserviceService) {
     this.radioSelected = "AGREE";
@@ -31,7 +30,7 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.SectionId = this.route.snapshot.paramMap.get('id');
-    this.data.GetQuestionsBySectionId(this.SectionId).subscribe(question => {this.Questions = question; this.ngOnInit();});
+    this.data.GetQuestionsBySectionId(this.SectionId).subscribe(question => {this.Questions = question;});
     this.data.GetAnswers().subscribe(answer => this.Answers = answer);
   }
 

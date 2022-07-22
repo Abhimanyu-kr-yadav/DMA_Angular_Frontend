@@ -10,6 +10,7 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     BrowserAnimationsModule,
     CdkAccordionModule,
     FormsModule,
-    
+    MatRadioModule
   ],
   providers: [
     FetchserviceService

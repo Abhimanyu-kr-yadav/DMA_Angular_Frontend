@@ -11,14 +11,21 @@ export class AppComponent implements OnInit{
 
   title = 'dma';
   Sections:any[] = [];
-  
-
+  Questions:any[] = [];
+  Answers:any[] = [];
 
   constructor(private route: ActivatedRoute, private data: FetchserviceService){}
  
   ngOnInit(): void {
     this.data.GetSections().subscribe(section => this.Sections=section);
     
+  }
+
+
+  getQuestions(id:any)
+  {
+    this.data.GetQuestionsBySectionId(id).subscribe(question => {this.Questions = question;});
+    this.data.GetAnswers().subscribe(answer => this.Answers = answer);
   }
 
 }
