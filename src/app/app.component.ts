@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { FetchserviceService } from './services/fetchservice.service';
 
@@ -21,6 +22,9 @@ export class AppComponent implements OnInit{
     
   }
 
+  myForm = new FormGroup ({
+    ans : new FormControl('AGREE')
+  })
 
   getQuestions(id:any)
   {
@@ -28,4 +32,8 @@ export class AppComponent implements OnInit{
     this.data.GetAnswers().subscribe(answer => this.Answers = answer);
   }
 
+  getFormData(data:any)
+  {
+    alert(JSON.stringify(data));
+  }
 }
