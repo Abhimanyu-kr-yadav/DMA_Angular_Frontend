@@ -20,4 +20,8 @@ export class FetchserviceService {
   GetAnswers():Observable<any[]>{
     return this.http.get<any[]>('http://localhost:8080/dma/getAnswers');
   }
+
+  GetSectionBySectionId(id:string|null):Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:8080/dma/getSectionsById/${id}`);
+  }
 }
