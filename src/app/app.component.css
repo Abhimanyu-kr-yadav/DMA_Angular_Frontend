@@ -79,7 +79,7 @@
   background-size: cover;
 
   width: 100%;
-  height: 250px;
+  height: 20rem;
 }
 
 .leftHeroHeader {
@@ -101,37 +101,3 @@
   margin-top: 1.5rem;
 }
 
-.rightHeroHeader {
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  height: 90px;
-  position: absolute;
-  right: 0;
-  top: 20%;
-  color: #fff;
-  background-color: #e60000;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-}
-
-.rightHeroCustomer {
-  display: flex;
-  flex-direction: row;
-  position: sticky;
-  margin-left: 1.5rem;
-}
-
-.rightHeroCustomer img {
-  position: relative;
-  top: .8rem;
-}
-
-.rightHeroCustomer p {
-  margin-left: 2rem;
-  position: relative;
-  top: 1.5rem;
-  font-size:1.3rem;
-  font-weight: 400;
-  line-height: 1.5rem;
-}

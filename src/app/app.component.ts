@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,87 +12,124 @@ import { FetchserviceService } from './services/fetchservice.service';
 export class AppComponent implements OnInit{
 
   title = 'dma';
+
+
+  thenBlock:TemplateRef<any>|null = null;
+
+  @ViewChild('then1', {static: true}) then1:TemplateRef<any>|null = null;
+  @ViewChild('then2', {static: true}) then2:TemplateRef<any>|null = null;
+  @ViewChild('then3', {static: true}) then3:TemplateRef<any>|null = null;
+
+
+  show = true;
   Sections:any[] = [];
   Section:any;
-  Questions:any[] = [];
-  Answers:any[] = [];
-  answers:string[] = ['AGREE','DISAGREE','STRONGLY_AGREE','STRONGLY_DISAGREE','Can_not_say'];
-  question1:string = "Is your digital strategy defined?";
-  question2:string = "Does your organization have a shared Vision of your digital strategy?";
-  question3:string = "Is your organizational culture ready to accept digital transformation?";
-  Responses:string[]=[];
-  tempData:string[] = [];
-  n:number = 0;
+  Contents:string[]=[
+    'a plan of action designed to achieve a long-term or overall aim',
+    'Customer engagement is the process of interacting with customers through a variety of channels in order to strengthen your relationship',
+    'A product is a tangible item that is put on the market for acquisition, attention, or consumption, while a service is an intangible item, which arises from the output of one or more individuals',
+    'We help clients to reimagine their business, build workforces with the leaders and cultures to accelerate change, and create and deliver employee experience and HR services',
+    'Digital operations is the concept of infusing business processes with the agility, intelligence and automation to create operational models that delight customers and improve performance'
+  ];
+  content0:string = 'a plan of action designed to achieve a long-term or overall aim';
+  
 
   constructor(private route: ActivatedRoute, private data: FetchserviceService){}
  
   ngOnInit(): void {
     this.data.GetSections().subscribe(section => this.Sections=section);
-    
+    this.thenBlock = this.then1;
   }
+  GetMessageFromChild(e:any){
+    //this will use to show register customer form
+    this.thenBlock = this.then3;
+   }
 
-  myForm = new FormGroup ({
-    ans0 : new FormControl(''),
-    ans1 : new FormControl(''),
-    ans2 : new FormControl(''),
-    ans3 : new FormControl(''),
-    ans4 : new FormControl(''),
-    ans5 : new FormControl('')
-  })
+   GetMessageToHide(e:any)
+   {
+    //this will use to hide register customer form
+    this.thenBlock = this.then2;
+    this.show = e;
+   }
 
-  getQuestions(id:any)
-  {
-    this.data.GetQuestionsBySectionId(id).subscribe(question => {this.Questions = question;});
-    this.data.GetAnswers().subscribe(answer => this.Answers = answer);
-  }
-
-  getQuestions2(id:any)
-  {
-    id = id + 1;
-    console.log(id);
-    this.data.GetQuestionsBySectionId(id).subscribe(question => {this.Questions = question;});
-    this.data.GetAnswers().subscribe(answer => this.Answers = answer);
-  }
-
-
-  getFormData(data:any)
-  {
-   
-    if(data.ans0 != '')
-    {
-      this.Responses.push(data.ans0);
-    }
-    if(data.ans1 != '')
-    {
-      this.Responses.push(data.ans1);
-    }
-    if(data.ans2 != '')
-    {
-      this.Responses.push(data.ans2);
-    }
-    if(data.ans3 != '')
-    {
-      this.Responses.push(data.ans3);
-    }
-    if(data.ans4 != '')
-    {
-      this.Responses.push(data.ans4);
-    }
-    if(data.ans5 != '')
-    {
-      this.Responses.push(data.ans5);
-    }
-    console.log(this.Responses);
-    this.myForm.reset();
-    this.tempData = this.Responses;
-    localStorage.setItem("'res'+n",JSON.stringify(this.tempData));
-    this.n = this.n+1;
-    this.Responses = [];
-  }
-
-  openAnotherSection(sectionId:string)
-  {
-    console.log(sectionId);
-    this.data.GetSectionBySectionId(sectionId).subscribe(section => {this.Section = section;});
-  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// myForm = new FormGroup ({
+//   ans0 : new FormControl(''),
+//   ans1 : new FormControl(''),
+//   ans2 : new FormControl(''),
+//   ans3 : new FormControl(''),
+//   ans4 : new FormControl(''),
+//   ans5 : new FormControl('')
+// })
+
+
+// getFormData(data:any)
+// {
+ 
+//   if(data.ans0 != '')
+//   {
+//     this.Responses.push(data.ans0);
+//   }
+//   if(data.ans1 != '')
+//   {
+//     this.Responses.push(data.ans1);
+//   }
+//   if(data.ans2 != '')
+//   {
+//     this.Responses.push(data.ans2);
+//   }
+//   if(data.ans3 != '')
+//   {
+//     this.Responses.push(data.ans3);
+//   }
+//   if(data.ans4 != '')
+//   {
+//     this.Responses.push(data.ans4);
+//   }
+//   if(data.ans5 != '')
+//   {
+//     this.Responses.push(data.ans5);
+//   }
+//   console.log(this.Responses);
+//   this.myForm.reset();
+//   this.tempData = this.Responses;
+//   localStorage.setItem("res1",JSON.stringify(this.tempData));
+//   this.Responses = [];
+// }
+
+
+
+// getQuestions(id:any)
+//   {
+//     this.data.GetQuestionsBySectionId(id).subscribe(question => {this.Questions = question;});
+//     this.data.GetAnswers().subscribe(answer => this.Answers = answer);
+//   }
+
+ 
+//   openAnotherSection(sectionId:string)
+//   {
+//     console.log(sectionId);
+//     this.data.GetSectionBySectionId(sectionId).subscribe(section => {this.Section = section;});
+//   }

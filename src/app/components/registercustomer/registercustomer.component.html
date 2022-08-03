@@ -1,0 +1,85 @@
+<!-- <div>
+    <div>
+        <form #customerRegister="ngForm" (submit)="SubmitClick(customerRegister.value)">
+            <mat-dialog-content>
+                <div class="mb-3">
+                    <label for="exampleInputUsername" class="form-label">Full Name</label>
+                    <input type="text" name="customer_name" ngModel #customer_name="ngModel" class="form-control"
+                        id="exampleInputUsername" aria-describedby="UsernameHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" name="email" ngModel #email="ngModel" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="company_details" class="form-label">Company</label>
+                    <input type="text" name="company" ngModel #company="ngModel" class="form-control"
+                        id="company_details">
+                </div>
+                <div class="mb-3">
+                    <label for="phone_details" class="form-label">Phone</label>
+                    <input type="text" name="phone" ngModel #phone="ngModel" class="form-control" id="phone_details">
+                </div>
+            </mat-dialog-content>
+            <mat-dialog-actions>
+                <div class="btns">
+                    <button mat-button mat-dialog-close class="btn btn-danger cancel">Cancel</button>
+                    <button type="submit" [mat-dialog-close]="true" class="btn btn-success submit">Submit</button>
+                </div>
+            </mat-dialog-actions>
+        </form>
+    </div>
+</div>
+
+<div class="btns">
+    <button type="submit" class="btn btn-danger cancel" (click)="cancelButton()">Cancel</button>
+    <button type="submit" class="btn btn-success submit">Submit</button>
+</div> -->
+
+
+<!-- Normal Form -->
+
+<div class="formmain">
+    <div class="container formcont">
+        <div class="heading">
+            <h1>Contact us</h1>
+        </div>
+        <form #customerRegister="ngForm" (submit)="SubmitClick(customerRegister.value)">
+            <mat-dialog-content>
+                <div class="mb-3 fname">
+                    <h4 for="exampleInputUsername" class="form-label flabel">Full Name</h4>
+                    <input type="text" name="customer_name" ngModel #customer_name="ngModel" class="form-control input"
+                        id="exampleInputUsername" aria-describedby="UsernameHelp">
+                </div>
+                <div class="mb-3 company">
+                    <label for="company_details" class="form-label clabel">Company</label>
+                    <input type="text" name="company" ngModel #company="ngModel" class="form-control input"
+                        id="company_details">
+                </div>
+                <div class="mb-3 email">
+                    <label for="exampleInputEmail1" class="form-label elabel">Email</label>
+                    <input type="email" name="email" ngModel #email="ngModel" class="form-control input"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3 phone">
+                    <label for="phone_details" class="form-label plabel">Phone</label>
+                    <input type="text" name="phone" ngModel #phone="ngModel" class="form-control input" id="phone_details">
+                </div>
+                <div class="mb-3 check">
+                    <input type="checkbox" name="checkbox" class="mb-3 checkinput">
+                    <p>I have read Motherson Technology Services Limited <a href="https://mothersontechnology.com/privacy-policy/" target="_blank"><span class="pspan">Privacy Policy</span></a> and agree to the terms and conditions*</p>
+                </div>
+            </mat-dialog-content>
+            <mat-dialog-actions>
+                <div class="btns">
+                    <button type="submit" class="btn btn-danger submit btn-outline-light">Submit</button>
+                </div>
+                <div class="desc">
+                    <p>By providing your contact information and clicking 'submit', you authorize Motherson Technology Services Limited to store your contact details and contact you with information on case studies, whitepapers, events, webinars, newsletters,  announcements and other relevant updates.</p>
+                </div>
+            </mat-dialog-actions>
+        </form>
+    </div>
+</div>

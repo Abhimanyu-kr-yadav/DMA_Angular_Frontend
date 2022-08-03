@@ -1,0 +1,82 @@
+.mainpop{
+    width: 25rem;
+    border-radius: .5rem;
+    height: auto;
+    position: fixed;
+    z-index: 8;
+    left: 35%;
+    top: 30%;
+    background-color: rgb(39, 39, 39);
+    padding: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.btns{
+    width: 70%;
+    margin-left: 27rem;
+    margin-top: 2rem;
+}
+.btns .submit{
+    border: none;
+    border-radius: 0px;
+    width: 8rem;
+}
+.input{
+    height: 2rem;
+    border-radius: 0;
+}
+.formmain{
+    background-image: url("../../../assets/contact-bg.jpg");
+    background-size: cover;
+    color: #fff;
+    height: 40rem;
+    margin-top: -1.5rem;
+}
+.formcont{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.heading{
+    margin-bottom: 2rem;
+    /* margin-top: 8rem; */
+    padding-top: 5rem;
+}
+/* form{
+    margin-top: 10rem;
+} */
+.heading h1{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 57px;
+    
+}
+.fname, .email, .company, .phone{
+    display: flex;
+}
+.fname .flabel, .company .clabel, .email .elabel, .phone .plabel{
+ width: 6rem;
+ font-weight: 400;
+}
+.pspan{
+    color: #cf011d;
+    cursor: pointer;
+}
+.pspan:hover, .pspan:focus{
+    color: #da2128;
+}
+a{
+    text-decoration: none;
+}
+.check{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 1rem;
+}
+p{
+    margin-left: 2rem;
+}
+.desc{
+    margin-top: 4rem;
+}

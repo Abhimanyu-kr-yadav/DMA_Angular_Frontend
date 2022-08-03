@@ -11,11 +11,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
+import { RegistercustomerComponent } from './components/registercustomer/registercustomer.component';
+import { PopupformComponent } from './components/popupform/popupform.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    RegistercustomerComponent,
+    PopupformComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,8 @@ import {MatRadioModule} from '@angular/material/radio';
     BrowserAnimationsModule,
     CdkAccordionModule,
     FormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule
   ],
   providers: [
     FetchserviceService
