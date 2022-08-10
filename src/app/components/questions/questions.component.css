@@ -15,7 +15,9 @@
 .example-radio-button {
   margin: 5px;
 }
-
+.btns{
+  margin-right: 8rem;
+}
 
 .accordion {
   display: block;
@@ -80,4 +82,15 @@
   margin: 0;
   padding: 1px;
   display: inline-flex;
+}
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
 }

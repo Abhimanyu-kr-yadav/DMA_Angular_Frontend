@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { RegistercustomerComponent } from './components/registercustomer/registercustomer.component';
 import { PopupformComponent } from './components/popupform/popupform.component';
 import { HomeComponent } from './components/home/home.component';
@@ -33,7 +34,8 @@ import { HomeComponent } from './components/home/home.component';
     CdkAccordionModule,
     FormsModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule
   ],
   providers: [
     FetchserviceService

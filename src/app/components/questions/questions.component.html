@@ -9,8 +9,8 @@
                 <cdk-accordion-item *ngFor="let section of Sections; let index = index;"
                     #accordionItem="cdkAccordionItem" class="accordion-item" role="button" tabindex="0"
                     [attr.id]="'accordion-header-' + index" [attr.aria-expanded]="accordionItem.expanded"
-                    [attr.aria-controls]="'accordion-body-' + index">
-
+                    [attr.aria-controls]="'accordion-body-' + index"
+                    >
                     <div class="accordion-item-header">
                         <span>
                             <i class="fa-solid fa-plus"></i>
@@ -26,7 +26,6 @@
                         <ol>
                             <li *ngFor="let question of Questions; let in = index;">
                                 <span>{{question.question_name | titlecase}}</span>
-
                                 <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
                                     [formControlName]="'ans'+in">
                                     <mat-radio-button class="example-radio-button" *ngFor="let answer of Answers"
@@ -36,9 +35,9 @@
                                 </mat-radio-group>
                             </li>
                         </ol>
-                        <div class="text-center">
-                            <button type="reset" class="btn btn-dark m-2">Reset</button>
-                            <button (click)="accordionItem.toggle()" class="btn btn-danger m-2">Next</button>
+                        <div class="text-center btns">
+                            <button type="reset" class="btn btn-dark mx-2">Reset</button>
+                            <button (click)="accordionItem.toggle()" class="btn btn-danger m-2">Save</button>
                         </div>
                     </div>
                     <!-- accordion item body end -->

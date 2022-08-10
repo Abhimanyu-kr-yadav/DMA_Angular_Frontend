@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AddCustomerService } from '../../services/add-customer.service';
 import { Customer } from '../Customer';
 import { MatDialog } from '@angular/material/dialog';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-registercustomer',
@@ -12,7 +13,11 @@ import { MatDialog } from '@angular/material/dialog';
 export class RegistercustomerComponent implements OnInit {
 
   customer:Customer = new Customer();
-  constructor(private route:Router,private cusData:AddCustomerService,private dialogRef:MatDialog) { }
+  constructor(private route:Router,
+              private cusData:AddCustomerService,
+              private dialogRef:MatDialog,
+              private cookie: CookieService
+              ) { }
 
   showChild:boolean = false;
 
@@ -20,6 +25,7 @@ export class RegistercustomerComponent implements OnInit {
 
 
   ngOnInit(): void {
+   
   }
   displayStyle = "none";
   cancelButton(){
@@ -36,7 +42,11 @@ export class RegistercustomerComponent implements OnInit {
     this.customer.company = data.company;
     console.log(this.customer);
     this.HideConatactForm.emit(this.showChild);
-    this.cusData.RegisterCustomer(this.customer).subscribe();
+    this.cusData.RegisterCustomer(this.customer).subscribe();  
+    this.cookie.set("currentCustomerId",this.customer.email);
+    this.cookie.set("isRegister","Yes");
     this.route.navigate(['/questions']);
   }
+
+
 }
